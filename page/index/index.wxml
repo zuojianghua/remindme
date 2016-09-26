@@ -1,0 +1,13 @@
+<map markers="{{markers}}" style="width: 745rpx; height: 400rpx; border:1rpx solid #F00;"></map>
+
+<view class="section">
+  <view class="section__title">线路列表</view>
+  <view class="flex-wrp" style="height: 300px; flex-direction:column;">
+    <view class="flex-item">
+        <label class="checkbox" wx:for="1">
+            <checkbox value="宝山路" checked="checked"/>宝山路
+        </label>
+    </view>
+    <view class="flex-item">浦电路</view>
+  </view>
+</view>
