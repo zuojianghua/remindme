@@ -1,27 +1,12 @@
 {
-    "pages": [
-        "page/index/index",
-        "page/setting/index"
-    ],
-    "window": {
-        "navigationBarTitleText": "到站提醒",
-        "navigationBarTextStyle": "white"
-    },
-    "tabBar": {
-        "list": [
-            {
-                "pagePath": "page/index/index",
-                "text": "首页"
-            },
-            {
-                "pagePath": "page/setting/index",
-                "text": "设置"
-            }
-        ]
-    },
-    "networkTimeout": {
-        "request": 10000,
-        "downloadFile": 10000
-    },
-    "debug": true
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
 }
