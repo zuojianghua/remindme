@@ -10,12 +10,12 @@ Page({
     stopIndex: 0, //所选提醒站点
     objectArray: [
       {id: 0,name: '上海',line:[1,2,3,4,5,6,7,8,9,10],stop:[
-        [{name:'富锦路',lon:121.431023,lat:31.39867},
-        {name:'友谊西路',lon:121.434336,lat:31.38774},
-        {name:'宝安公路',lon:121.437357,lat:31.376207},
-        {name:'共富新村',lon:121.440458,lat:31.361557},
-        {name:'呼兰路',lon:121.444185,lat:31.345991},
-        {name:'通河新村',lon:121.447817,lat:31.337798},
+        [{name:'富锦路',lon:121.424720,lat:31.392403},
+        {name:'友谊西路',lon:121.427876,lat:31.381353},
+        {name:'宝安公路',lon:121.430978,lat:31.369535},
+        {name:'共富新村',lon:121.434090,lat:31.355413},
+        {name:'呼兰路',lon:0,lat:0},
+        {name:'通河新村',lon:0,lat:0},
         ],
 
         [{name:'徐泾东',lon:0,lat:0},
@@ -26,11 +26,11 @@ Page({
         {name:'咸宁路',lon:'',lat:''},
         ],
 
-        [{name:'江杨北路',lon:121.446217,lat:31.414218},
-        {name:'铁力路',lon:121.467851,lat:31.414261},
-        {name:'友谊路',lon:121.48254,lat:31.40993},
-        {name:'宝杨路',lon:121.486126,lat:31.401287},
-        {name:'水产路',lon:121.494718,lat:31.387101},
+        [{name:'江杨北路',lon:121.439511,lat:31.407818},
+        {name:'铁力路',lon:121.461184,lat:31.408087},
+        {name:'友谊路',lon:121.476020,lat:31.404052},
+        {name:'宝杨路',lon:121.479584,lat:31.395250},
+        {name:'水产路',lon:121.488137,lat:31.381389},
         {name:'淞滨路',lon:'',lat:''},
         {name:'张华浜路',lon:'',lat:''},
         {name:'淞发路',lon:'',lat:''},
@@ -41,7 +41,7 @@ Page({
         {name:'赤峰路',lon:'',lat:''},
         {name:'虹口足球场',lon:'',lat:''},
         {name:'东宝兴路',lon:'',lat:''},
-        {name:'宝山路',lon:121.483032,lat:31.257464},
+        {name:'宝山路',lon:121.476375,lat:31.251537},
         ]
       ]},
       {id: 1,name: '北京',line:[1,2,3,4,5,6,7,8,9,10]},
@@ -91,7 +91,7 @@ Page({
 
     var s = util.latLonDistance(lat1,lon1,lat2,lon2);
     
-    console.log(s);
+    //console.log(s);
 
     this.setData({dis:s});
   },
@@ -109,7 +109,7 @@ Page({
 
     setInterval(function(){
       wx.getLocation({
-        type: 'wgs84',
+        type: 'gcj02',
         success: function(res) {
           that.setData({
             lon:res.longitude,
@@ -118,6 +118,13 @@ Page({
           });
 
           that.handlerDistance();
+          
+          // wx.openLocation({
+          //   longitude:res.longitude,
+          //   latitude:res.latitude,
+          // });
+
+          
         }
       })
     },3000);
